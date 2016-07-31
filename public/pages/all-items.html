@@ -1,0 +1,52 @@
+<span class="glyphicon glyphicon-search"></span>
+<input type="text" ng-model="search.item">
+
+<div class="table-responsive" >
+<table class="table">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Item</th>
+          <th>Edit</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="shoppingItem in aic.shoppingItems | filter: search">
+		  <tr>
+		      <td>
+		      	<input type="checkbox" ng-model="shoppingItem.purchased" 
+		      	class="checkbox"
+		      	ng-change="aic.update($index)">
+		      </td>
+		      <td>
+		      	<a ng-show="!aic.editing[$index]" href="#/{{shoppingItem._id}}">{{shoppingItem.item}}</a>
+		      	<input ng-show="aic.editing[$index]" type="text" 
+		      	ng-model="shoppingItem.item">
+		      </td>
+		      <td>
+		      	<button ng-show="!aic.editing[$index]" ng-click="aic.edit($index)"
+		      	class="btn btn-info">
+		        <span class="glyphicon glyphicon-pencil"></span>
+		      	</button>
+		      	<button ng-show="aic.editing[$index]" ng-click="aic.update($index)" 
+		      	class="btn btn-success">U
+		      	</button>
+		      </td>
+		      <td>
+		      	<button ng-show="!aic.editing[$index]" ng-click="aic.remove($index)" 
+		      	class="btn btn-danger">
+		        <span class="glyphicon glyphicon-remove"></span>
+		      	</button>
+		      	<button ng-show="aic.editing[$index]" ng-click="aic.cancel($index)"
+		      	class="btn btn-warning">cancel
+		      	</button>
+		      </td>
+		  </tr>
+      </tbody>
+    </table>
+</div>
+Add New
+<input type="text" ng-model="aic.shoppingItem">
+<button ng-click="aic.save()" class="btn btn-success">
+<span class="glyphicon glyphicon-plus"></span>
+</button>

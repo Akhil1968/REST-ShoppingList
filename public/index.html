@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+ <head>
+    <title>Shopping List</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+</head>
+
+ <body>
+  <div class="container">
+  <div class="row" align="center">
+    <h1> Shopping List </h1>
+    <!-- Menu -->
+    <ul class="nav navbar-nav navbar-right" >
+        <li><a href="#/" >
+        <i class="glyphicon glyphicon-home"></i> Home</a></li>
+   </ul>
+    <!-- Views -->
+    <ng-view></ng-view>
+    <!-- Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+    <!-- My Module -->
+    <script src="script.js"></script>
+  </div>
+  </div>
+ </body>
+</html>
